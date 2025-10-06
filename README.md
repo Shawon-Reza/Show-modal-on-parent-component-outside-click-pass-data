@@ -54,3 +54,41 @@ const Modal = ({ isOpen, onClose, children }) => {
 };
 
 export default Modal;
+```
+### Using the Modal in a Parent Component (ParentComponent.js)
+- Create state to manage modal visibility (isModalOpen).
+- Pass the isModalOpen state and the setIsModalOpen function as isOpen and onClose props to the Modal component.
+
+```jsx
+import React, { useState } from "react";
+import Modal from "./Modal";
+
+const ParentComponent = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true); // Open modal
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false); // Close modal
+  };
+
+  return (
+    <div>
+      <button onClick={handleOpenModal} className="bg-blue-500 text-white py-2 px-4 rounded">
+        Open Modal
+      </button>
+
+      {/* Modal Component */}
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+        <h2>Modal Content</h2>
+        <p>This is a reusable modal component.</p>
+        {/* You can add more content here */}
+      </Modal>
+    </div>
+  );
+};
+
+export default ParentComponent;
+
