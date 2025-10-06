@@ -1,3 +1,4 @@
+# Modal Component
 ```jsx
 import React, { useEffect, useRef } from "react";
 
@@ -49,7 +50,7 @@ const Modal = ({ isOpen, onClose, children }) => {
 export default Modal;
 
 ```
-
+# Parent component
 ```jsx
 import React, { useState } from "react";
 import Modal from "./Modal";
