@@ -1,0 +1,1 @@
+# Show-modal-on-parent-component-outside-click-pass-data
